@@ -1,18 +1,16 @@
-import React, {useEffect} from 'react'
-import './App.css';
-import {useDispatch} from 'react-redux'
-import {getCardsTC} from './redux/cards-reducer'
+import React from 'react'
+import './App.css'
+import DealerArea from './components/DealerArea/DealerArea'
+import PlayerArea from './components/PlayerArea/PlayerArea'
 
 function App() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(getCardsTC())
-  })
-  return (
-    <div className="App">
 
-    </div>
-  );
+    return (
+        <div className="App">
+            <PlayerArea/>
+            <DealerArea/>
+        </div>
+    )
 }
 
-export default App;
+export default App

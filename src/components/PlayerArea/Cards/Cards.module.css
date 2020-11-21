@@ -1,0 +1,19 @@
+.items {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.item {
+    width: 100px;
+    padding: 5px;
+}
+
+.img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
