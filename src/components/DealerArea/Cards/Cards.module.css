@@ -12,6 +12,18 @@
     padding: 5px;
 }
 
+.back {
+
+}
+
+.front {
+
+}
+
+.flipped {
+    background: red;
+}
+
 .img {
     display: block;
     width: 100%;

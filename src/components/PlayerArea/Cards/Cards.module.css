@@ -10,10 +10,12 @@
 .item {
     width: 100px;
     padding: 5px;
+
 }
 
 .img {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 7px;
 }
