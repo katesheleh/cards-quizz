@@ -1,25 +1,23 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {getDealerCardsTC} from '../../redux/dealer-cards-reducer'
-import {CardsResponseType} from '../../api/api'
+import {CardsType, dealerCardOpenAC} from '../../redux/dealer-cards-reducer'
 import {AppRootStateType} from '../../redux/store'
 import commonStyles from '../../assets/styles/common.module.css'
 import Cards from './Cards/Cards'
 import {playerCardsAC} from '../../redux/player-cards-reducer'
 
 const DealerArea = () => {
-    const dealerCards = useSelector<AppRootStateType, CardsResponseType[]>(store => store.dealerCards.cards)
-
+    const dealerCards = useSelector<AppRootStateType, CardsType[]>(store => store.dealerCards.cards)
     const dispatch = useDispatch()
 
-    const onClickHandler = (url: string) => {
-        dispatch(playerCardsAC({url: url}))
+
+    const onClickHandler = (card: CardsType) => {
+        dispatch(playerCardsAC(card))
+        if (dealerCards.filter(d => d.isOpen).length < 4) {
+            dispatch(dealerCardOpenAC(card.id))
+        }
     }
 
-
-    useEffect(() => {
-        dispatch(getDealerCardsTC())
-    }, [])
 
     return (
         <section className={commonStyles.container}>

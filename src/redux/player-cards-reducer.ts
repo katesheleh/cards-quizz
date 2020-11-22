@@ -1,7 +1,8 @@
 import {CardsResponseType} from '../api/api'
+import { CardsType } from './dealer-cards-reducer'
 
 let initialState: InitialStateType = {
-    cards: [] as CardsResponseType[]
+    cards: [] as CardsType[]
 } as InitialStateType
 
 export const playerCardsReducer = (state: InitialStateType = initialState, action: ActionsType) => {
@@ -16,7 +17,7 @@ export const playerCardsReducer = (state: InitialStateType = initialState, actio
 }
 
 // Action creators
-export const playerCardsAC = (card: CardsResponseType) => ({type: 'PLAYER-CARDS', card} as const)
+export const playerCardsAC = (card: CardsType) => ({type: 'PLAYER-CARDS', card} as const)
 export const resetPlayerCardsAC = () => ({type: 'RESET-PLAYER-CARDS'} as const)
 
 
