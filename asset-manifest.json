@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/cards-quizz/static/css/main.0441ad15.chunk.css",
+    "main.js": "/cards-quizz/static/js/main.93b8626f.chunk.js",
+    "main.js.map": "/cards-quizz/static/js/main.93b8626f.chunk.js.map",
+    "runtime-main.js": "/cards-quizz/static/js/runtime-main.95b7b426.js",
+    "runtime-main.js.map": "/cards-quizz/static/js/runtime-main.95b7b426.js.map",
+    "static/js/2.2038a4c1.chunk.js": "/cards-quizz/static/js/2.2038a4c1.chunk.js",
+    "static/js/2.2038a4c1.chunk.js.map": "/cards-quizz/static/js/2.2038a4c1.chunk.js.map",
+    "static/js/3.f8f94e3a.chunk.js": "/cards-quizz/static/js/3.f8f94e3a.chunk.js",
+    "static/js/3.f8f94e3a.chunk.js.map": "/cards-quizz/static/js/3.f8f94e3a.chunk.js.map",
+    "index.html": "/cards-quizz/index.html",
+    "static/css/main.0441ad15.chunk.css.map": "/cards-quizz/static/css/main.0441ad15.chunk.css.map",
+    "static/js/2.2038a4c1.chunk.js.LICENSE.txt": "/cards-quizz/static/js/2.2038a4c1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95b7b426.js",
+    "static/js/2.2038a4c1.chunk.js",
+    "static/css/main.0441ad15.chunk.css",
+    "static/js/main.93b8626f.chunk.js"
+  ]
+}
