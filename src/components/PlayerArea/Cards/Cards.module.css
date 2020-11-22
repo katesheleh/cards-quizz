@@ -1,16 +1,19 @@
 .items {
-    width: 100%;
-    padding: 10px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    position: relative;
 }
 
 .item {
-    width: 100px;
+    width: 80px;
     padding: 5px;
-
+    position: relative;
+    z-index: 3;
 }
 
 .img {
@@ -18,4 +21,26 @@
     width: 100%;
     height: auto;
     border-radius: 7px;
+}
+
+.emptyCards {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1;
+}
+
+.emptyCard {
+    width: 70px;
+    height: 107px;
+    border: 1px solid #3dc9c0;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+.emptyCard:last-child {
+    margin-right: 0;
 }

@@ -5,6 +5,7 @@ import {DealerCardsType} from '../../../redux/dealer-cards-reducer'
 
 
 const Cards = (props: PropsType) => {
+
     return (
         <div className={styles.items}>
             {props.cards.map(
@@ -14,7 +15,7 @@ const Cards = (props: PropsType) => {
     )
 }
 
-export default Cards
+export default React.memo(Cards)
 
 
 // TYPES

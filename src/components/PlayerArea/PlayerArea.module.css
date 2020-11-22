@@ -2,5 +2,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    min-height: 170px;
+    min-height: 140px;
+    margin-top: 35px;
 }

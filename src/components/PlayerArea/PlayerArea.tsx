@@ -8,6 +8,7 @@ import Cards from './Cards/Cards'
 import {getDealerCardsTC} from '../../redux/dealer-cards-reducer'
 
 const PlayerArea = () => {
+
     const playerCards = useSelector<AppRootStateType, PlayerCardsType[]>(store => store.playerCards.cards)
     const dispatch = useDispatch()
 
@@ -25,4 +26,4 @@ const PlayerArea = () => {
     )
 }
 
-export default PlayerArea
+export default React.memo(PlayerArea)

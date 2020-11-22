@@ -4,8 +4,15 @@ import {PlayerCardsType} from '../../../redux/player-cards-reducer'
 
 
 const Cards = (props: PropsType) => {
+
     return (
         <div className={styles.items}>
+            <div className={styles.emptyCards}>
+                <div className={styles.emptyCard}></div>
+                <div className={styles.emptyCard}></div>
+                <div className={styles.emptyCard}></div>
+                <div className={styles.emptyCard}></div>
+            </div>
             {props.cards.map((d) => {
                 return (
                     <div key={d.id} className={styles.item}>
@@ -17,7 +24,7 @@ const Cards = (props: PropsType) => {
     )
 }
 
-export default Cards
+export default React.memo(Cards)
 
 
 // TYPES

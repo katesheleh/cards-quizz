@@ -25,7 +25,7 @@ const Card = (props: PropsType) => {
     )
 }
 
-export default Card
+export default React.memo(Card)
 
 
 // TYPES
