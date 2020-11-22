@@ -10,7 +10,7 @@ let initialState: InitialStateType = {
 export const dealerCardsReducer = (state: InitialStateType = initialState, action: ActionsType) => {
     switch (action.type) {
         case 'DEALER-CARDS':
-            return {...state, cards: action.cards}
+            return {...state, cards: [...state.cards, ...action.cards]}
         case 'DEALER-CARD-OPEN':
             return {
                 ...state,
