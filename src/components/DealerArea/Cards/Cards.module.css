@@ -5,26 +5,3 @@
     align-items: center;
     justify-content: center;
 }
-
-.item {
-    width: 7.6%;
-    padding: 5px;
-}
-
-.back {
-
-}
-
-.front {
-
-}
-
-.flipped {
-    background: red;
-}
-
-.img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
