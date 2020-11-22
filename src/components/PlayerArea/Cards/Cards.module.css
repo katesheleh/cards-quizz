@@ -44,3 +44,24 @@
 .emptyCard:last-child {
     margin-right: 0;
 }
+
+@media (max-width: 414px) {
+    .items {
+        width: 310px;
+    }
+
+    .item {
+        width: 76.9px;
+    }
+
+    .img {
+        border-radius: 3px;
+    }
+
+    .emptyCard {
+        width: 66.9px;
+        height: 100px;
+        left: -3px;
+        border-radius: 3px;
+    }
+}
