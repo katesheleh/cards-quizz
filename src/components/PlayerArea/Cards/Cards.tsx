@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Cards.module.css'
-import {CardsResponseType} from '../../../api/api'
+import {PlayerCardsType} from '../../../redux/player-cards-reducer'
 
 
 const Cards = (props: PropsType) => {
@@ -8,11 +8,8 @@ const Cards = (props: PropsType) => {
         <div className={styles.items}>
             {props.cards.map((d) => {
                 return (
-                    <div key={Math.random()} className={styles.item}>
-                        <img
-                            src={d.url}
-                            alt='card'
-                            className={styles.img}/>
+                    <div key={d.id} className={styles.item}>
+                        <img src={d.url} alt='card' className={styles.img}/>
                     </div>
                 )
             })}
@@ -25,5 +22,5 @@ export default Cards
 
 // TYPES
 type PropsType = {
-    cards: CardsResponseType[]
+    cards: PlayerCardsType[]
 }

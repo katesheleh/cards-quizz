@@ -4,7 +4,7 @@ import {v4} from 'uuid'
 
 
 let initialState: InitialStateType = {
-    cards: [] as CardsType[]
+    cards: [] as DealerCardsType[]
 } as InitialStateType
 
 export const dealerCardsReducer = (state: InitialStateType = initialState, action: ActionsType) => {
@@ -22,19 +22,15 @@ export const dealerCardsReducer = (state: InitialStateType = initialState, actio
 }
 
 // Action creators
-export const dealerCardsAC = (cards: CardsType[]) => ({type: 'DEALER-CARDS', cards} as const)
+export const dealerCardsAC = (cards: DealerCardsType[]) => ({type: 'DEALER-CARDS', cards} as const)
 export const dealerCardOpenAC = (id: string) => ({type: 'DEALER-CARD-OPEN', id} as const)
 
-export type CardsType = {
-    id: string
-    url: string
-    isOpen: boolean
-}
 // THUNK
 export const getDealerCardsTC = () => (dispatch: Dispatch<ActionsType>) => {
     cardsApi.cardsList()
         .then(res => {
             const cards = res.data.map(d => ({...d, isOpen: false, id: v4()}))
+            // receive data and shuffle it
             dispatch(dealerCardsAC(cards.sort(() => Math.random() - 0.5)))
         })
         .catch((error) => {
@@ -44,10 +40,16 @@ export const getDealerCardsTC = () => (dispatch: Dispatch<ActionsType>) => {
 
 // TYPES
 export type InitialStateType = {
-    cards: CardsType[]
+    cards: DealerCardsType[]
 }
 
-export type ActionsType = DealerCardsACType | dealerCardOpenACType
+export type DealerCardsType = {
+    id: string
+    url: string
+    isOpen: boolean
+}
+
+export type ActionsType = DealerCardsACType | DealerCardOpenACType
 
 export type DealerCardsACType = ReturnType<typeof dealerCardsAC>
-export type dealerCardOpenACType = ReturnType<typeof dealerCardOpenAC>
+export type DealerCardOpenACType = ReturnType<typeof dealerCardOpenAC>

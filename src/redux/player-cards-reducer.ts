@@ -1,14 +1,13 @@
-import {CardsResponseType} from '../api/api'
-import { CardsType } from './dealer-cards-reducer'
+import { DealerCardsType } from './dealer-cards-reducer'
 
 let initialState: InitialStateType = {
-    cards: [] as CardsType[]
+    cards: [] as DealerCardsType[]
 } as InitialStateType
 
 export const playerCardsReducer = (state: InitialStateType = initialState, action: ActionsType) => {
     switch (action.type) {
         case 'PLAYER-CARDS':
-            return {...state, cards: [...state.cards, action.card]}
+            return {...state, cards: [...state.cards, {url: action.card.url, id: action.card.id}]}
         case 'RESET-PLAYER-CARDS':
             return {...state, cards: []}
         default:
@@ -17,13 +16,18 @@ export const playerCardsReducer = (state: InitialStateType = initialState, actio
 }
 
 // Action creators
-export const playerCardsAC = (card: CardsType) => ({type: 'PLAYER-CARDS', card} as const)
+export const playerCardsAC = (card: PlayerCardsType) => ({type: 'PLAYER-CARDS', card} as const)
 export const resetPlayerCardsAC = () => ({type: 'RESET-PLAYER-CARDS'} as const)
 
 
 // TYPES
 export type InitialStateType = {
-    cards: CardsResponseType[]
+    cards: PlayerCardsType[]
+}
+
+export type PlayerCardsType = {
+    url: string
+    id: string
 }
 
 export type ActionsType = PlayerCardsACType | ResetPlayerCardsACType
